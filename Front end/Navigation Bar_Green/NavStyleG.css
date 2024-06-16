@@ -144,7 +144,7 @@ body {
   color:#fff;
 }
 .input-search::placeholder{
-  color:rgba(255,255,255,.5);
+  color:#6d8777;
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 100;
