@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to right bottom, #498d7c, #63e1aa, #2bbda0, #66bbf8);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 12px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+        
+        .question {
+            font-size: 20px; /* Increased font size */
+            font-weight: 700; /* Increased font weight */
+            color: #1e8ed8; /* Blue color for questions */
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        
+        .question::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            font-size: 14px;
+            color: #555;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.open .question::after {
+            transform: rotate(45deg);
+        }
+        
+        .answer {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            display: none;
+            margin-top: 8px;
+            padding-left: 16px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .faq-item.open .answer {
+            display: block;
+        }
+        
+        .additional-details {
+            margin-top: 12px;
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 20px;
+            background: linear-gradient(to right, #39ce95, #4ca9e8);
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="question">Can I change my username?</div>
+            <div class="answer">
+                Unfortunately, once a username is chosen, it cannot be changed. We recommend choosing a username that you'll be happy with in the long term.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">How do I reset my password?</div>
+            <div class="answer">
+                You can reset your password by clicking on the 'Forgot Password?' link on the login page. Follow the instructions sent to your registered email to create a new password.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">Is my account information secure?</div>
+            <div class="answer">
+                Yes, we take the security of your account information very seriously. We use industry-standard encryption and security practices to protect your data.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">How can I report inappropriate content?</div>
+            <div class="answer">
+                You can report inappropriate content by using the reporting tools available on each post. Our team reviews all reports promptly.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question">Can I delete my account?</div>
+            <div class="answer">
+                Yes, you can delete your account permanently. Please note that this action is irreversible and all your data will be lost.
+            </div>
+        </div>
+        
+        <!-- Back to Main Page Button -->
+        <button class="back-button" onclick="window.location.href='index.html';">Back to Main Page</button>
+    </div>
+
+    <script>
+        // JavaScript to toggle the answer visibility on click
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
